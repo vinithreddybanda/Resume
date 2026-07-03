@@ -1,0 +1,281 @@
+\documentclass[10pt, letterpaper]{article}
+
+% Packages
+\usepackage[
+    ignoreheadfoot,
+    top=2 cm,
+    bottom=2 cm,
+    left=2 cm,
+    right=2 cm,
+    footskip=1.0 cm,
+]{geometry}
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{primaryColor}{RGB}{0, 0, 0}
+\definecolor{textColor}{RGB}{0, 0, 0}
+\definecolor{mutedColor}{RGB}{64, 64, 64}
+\definecolor{ruleColor}{RGB}{0, 0, 0}
+\definecolor{linkIconColor}{RGB}{80, 80, 80}
+\usepackage{enumitem}
+\usepackage{fontawesome5} % Correct fontawesome package used here
+\usepackage{amsmath}
+\usepackage[
+    pdftitle={Vinith Reddy Banda Resume},
+    pdfauthor={Vinith Reddy Banda},
+    pdfcreator={LaTeX with RenderCV},
+    colorlinks=true,
+    urlcolor=primaryColor,
+    pageanchor=false
+]{hyperref}
+\usepackage[pscoord]{eso-pic}
+\usepackage{calc}
+\usepackage{bookmark}
+\usepackage{changepage}
+\usepackage{paracol}
+\usepackage{ifthen}
+\usepackage{needspace}
+\usepackage{iftex}
+
+% Font settings for PDFLaTeX, XeLaTeX or LuaLaTeX
+\ifPDFTeX
+    \input{glyphtounicode}
+    \pdfgentounicode=1
+    \usepackage[T1]{fontenc}
+    \usepackage[utf8]{inputenc}
+    \usepackage{lmodern}
+\fi
+
+\usepackage{charter}
+
+% Some settings
+\raggedright
+\AtBeginEnvironment{adjustwidth}{\partopsep0pt}
+\pagestyle{empty}
+\setcounter{secnumdepth}{0}
+\setlength{\parindent}{0pt}
+\setlength{\topskip}{0pt}
+\setlength{\columnsep}{0.15cm}
+\pagenumbering{gobble}
+\color{textColor}
+
+\titleformat{\section}{\needspace{4\baselineskip}\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule]
+\titlespacing{\section}{-1pt}{0.3 cm}{0.2 cm}
+
+\renewcommand\labelitemi{$\vcenter{\hbox{\small$\bullet$}}$}
+
+\newenvironment{highlights}{
+    \begin{itemize}[
+        topsep=0.10 cm,
+        parsep=0.10 cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=0 cm + 10pt
+    ]
+}{
+    \end{itemize}
+}
+
+\newenvironment{highlightsforbulletentries}{
+    \begin{itemize}[
+        topsep=0.10 cm,
+        parsep=0.10 cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=10pt
+    ]
+}{
+    \end{itemize}
+}
+
+\newenvironment{onecolentry}{
+    \begin{adjustwidth}{
+        0 cm + 0.00001 cm
+    }{
+        0 cm + 0.00001 cm
+    }
+}{
+    \end{adjustwidth}
+}
+
+\newenvironment{twocolentry}[2][]{
+    \onecolentry
+    \def\secondColumn{#2}
+    \setcolumnwidth{\fill, 4.5 cm}
+    \begin{paracol}{2}
+}{
+    \switchcolumn \raggedleft \secondColumn
+    \end{paracol}
+    \endonecolentry
+}
+
+\newenvironment{threecolentry}[3][]{
+    \onecolentry
+    \def\thirdColumn{#3}
+    \setcolumnwidth{, \fill, 4.5 cm}
+    \begin{paracol}{3}
+    {\raggedright #2} \switchcolumn
+}{
+    \switchcolumn \raggedleft \thirdColumn
+    \end{paracol}
+    \endonecolentry
+}
+
+\newenvironment{header}{
+    \setlength{\topsep}{0pt}\par\kern\topsep\centering\linespread{1.5}
+}{
+    \par\kern\topsep
+}
+
+\newcommand{\resumeName}[1]{{\fontsize{25 pt}{25 pt}\selectfont #1}}
+\newcommand{\contactSep}{\kern 5.0 pt\textbar\kern 5.0 pt}
+\newcommand{\muted}[1]{{\color{mutedColor}#1}}
+\newcommand{\contactIcon}[1]{{\color{linkIconColor}#1}}
+\newcommand{\githubIcon}{{\color{linkIconColor}\faGithub}}
+\newcommand{\certificateIcon}{{\color{linkIconColor}\faAward\,\scriptsize}}
+\newcommand{\entryTitle}[1]{\textbf{#1}}
+\newcommand{\entryRole}[1]{\textbf{#1}}
+\newcommand{\techStack}[1]{\muted{#1}}
+\newcommand{\activityLink}[1]{{\color{mutedColor}#1}}
+
+% Document begins here
+\begin{document}
+
+\begin{header}
+    \resumeName{Vinith Reddy Banda}
+
+    \vspace{5 pt}
+
+    \normalsize
+    \mbox{\contactIcon{\faEnvelope}\ \href{mailto:vinithreddybanda@gmail.com}{vinithreddybanda@gmail.com}}%
+    \contactSep%
+    \mbox{\contactIcon{\faLinkedin}\ \href{https://www.linkedin.com/in/vinithreddybanda}{vinithreddybanda}}%
+    \contactSep%
+    \mbox{\contactIcon{\faGithub}\ \href{https://github.com/vinithreddybanda}{vinithreddybanda}}%
+\end{header}
+
+\vspace{0.1 cm}
+
+\section{Education}
+
+\begin{onecolentry}
+    \textbf{Chaitanya Bharati Institute of Technology}, Hyderabad \hfill \textbf{2026}\\
+    \muted{B.E. in Information Technology} \hfill \textbf{CGPA: 8.43}
+\end{onecolentry}
+
+\vspace{0.15 cm}
+
+\begin{onecolentry}
+    \textbf{Government Polytechnic}, Warangal \hfill \textbf{2023}\\
+    \muted{Diploma in Computer Engineering} \hfill \textbf{CGPA: 9.74}
+\end{onecolentry}
+
+\section{Experience}
+
+\begin{onecolentry}
+    \entryTitle{Cognizant Technology Solutions} -- \entryRole{.NET Full Stack Intern} \hfill \textbf{Feb 2026 -- May 2026}\\
+    \techStack{ASP.NET Core, React, Entity Framework Core, SQL Server, REST APIs}
+\end{onecolentry}
+
+\vspace{0.10 cm}
+
+\begin{onecolentry}
+\begin{highlights}
+    \item Developed \textbf{CareSchedule}, a full-stack healthcare management platform for clinics and hospitals with 148 REST APIs, 32 controllers, 33 domain entities, and 6 role-based workflows.
+    \item Implemented an intelligent slot generation engine that prevents double-booking by resolving provider availability, holidays, leave, blackout periods, and resource constraints before publishing appointments.
+    \item Designed a 6-layer Clean Architecture using .NET, EF Core, SQL Server, and React to support secure, scalable clinical and administrative operations.
+\end{highlights}
+\end{onecolentry}
+
+\section{Projects}
+
+\begin{onecolentry}
+    \entryTitle{\href{https://github.com/vinithreddybanda/journalai}{JournalAI \githubIcon}}\\
+    \techStack{Next.js, TypeScript, Supabase, Docker, Kubernetes, Azure, GitHub Actions, Jenkins}
+\end{onecolentry}
+
+\vspace{0.10 cm}
+\begin{onecolentry}
+    \begin{highlights}
+        \item Developed an AI-powered journaling platform that processes journal entries and delivers structured mood insights using Groq AI, Next.js, and Supabase.
+        \item Implemented end-to-end CI/CD workflows with GitHub Actions, Jenkins, Docker, and Kubernetes to standardize testing, containerization, and cloud deployment processes.
+        \item Implemented a production-ready cloud deployment architecture integrating secure authentication, PostgreSQL persistence, containerized services, and automated delivery on Microsoft Azure.
+    \end{highlights}
+\end{onecolentry}
+
+\vspace{0.25 cm}
+
+\begin{onecolentry}
+    \entryTitle{\href{https://github.com/vinithreddybanda/activities}{Activities for Discord \githubIcon}}\\
+    \techStack{Android, Java, C++, JNI, Discord Partner SDK}
+\end{onecolentry}
+
+\vspace{0.10 cm}
+\begin{onecolentry}
+    \begin{highlights}
+        \item Developed an Android application that enables complete mobile control of Discord Rich Presence, extending capabilities not available in the official Discord mobile client.
+        \item Implemented a native JNI integration layer between Android and the Discord Partner SDK to maintain persistent SDK sessions and reliable real-time communication.
+        \item Implemented secure authentication, encrypted credential storage, intelligent image caching, and foreground/background services to keep Rich Presence synchronized during long-running app sessions.
+    \end{highlights}
+\end{onecolentry}
+
+\section{Skills}
+
+\begin{onecolentry}
+\textbf{Languages:}
+C\#, Java, Kotlin, TypeScript, JavaScript, Python, SQL
+\end{onecolentry}
+
+\vspace{0.15cm}
+
+\begin{onecolentry}
+\textbf{Frameworks \& Technologies:}
+ASP.NET Core, .NET, React, Next.js, Node.js, Express.js, Entity Framework Core, Android SDK, Tailwind CSS, shadcn/ui
+\end{onecolentry}
+
+\vspace{0.15cm}
+
+\begin{onecolentry}
+\textbf{Databases:}
+PostgreSQL, Microsoft SQL Server, MongoDB, Supabase
+\end{onecolentry}
+
+\vspace{0.15cm}
+
+\begin{onecolentry}
+\textbf{Cloud \& DevOps:}
+Docker, Kubernetes, GitHub Actions, Jenkins, GitLab CI/CD, Microsoft Azure, Oracle Cloud Infrastructure
+\end{onecolentry}
+
+\vspace{0.15cm}
+
+\begin{onecolentry}
+\textbf{Developer Tools:}
+Git, GitHub, Visual Studio, Visual Studio Code, Android Studio, Postman, GitHub Codespaces, Android Debug Bridge Tools, Docker Desktop, Virtual Machines
+\end{onecolentry}
+
+\section{Certifications}
+
+\begin{onecolentry}
+\begin{highlights}
+    \item \href{https://ti-user-certificates.s3.amazonaws.com/ae62dcd7-abdc-4e90-a570-83eccba49043/95a45e5b-2d7e-4586-b30c-e7f4589d1f56-vinith-reddy-banda-767cf9b1-af80-411a-ae27-724cefe7df97-certificate.pdf}{MongoDB Node.js Certification -- MongoDB University \certificateIcon}
+    \item \href{https://www.pupilfirst.school/c/240307-7VQD0R}{Web Development 101 -- Pupilfirst \certificateIcon}
+\end{highlights}
+\end{onecolentry}
+
+\section{Activities \& Achievements}
+
+\begin{onecolentry}
+    \begin{highlights}
+        \item Published the research paper \href{https://ieeexplore.ieee.org/document/11507447}{\activityLink{\textbf{Multi-Task Graph Attention Network for Kinematic Rehabilitation Exercise Analysis}}} at the \textbf{2026 IEEE International Conference for Convergence in Computing Technology (I3CTCON)}, indexed in IEEE Xplore.
+        
+        \item Published the open-source Android application \href{https://f-droid.org/packages/com.vinithreddybanda.whatsapstatus/}{\activityLink{\textbf{WhatsApp Status Saver}}} on the official \textbf{F-Droid} repository.
+
+       \item Secured \textbf{6th Place} in the \href{https://drive.google.com/file/d/15ES4cdWtAv5WHb2AfDR0ifpoEQ2f_7Hh/view?usp=drive_link}{\activityLink{\textbf{COSC HackWeek Challenge}}}, a week-long competitive coding event organized by \textbf{CBIT Open Source Community (COSC)} in collaboration with \textbf{GeeksforGeeks}. 
+
+        \item Volunteered as an event coordinator for a college Idea Presentation event, managing and assisting 20+ participants.
+    \end{highlights}
+\end{onecolentry}
+
+\end{document}

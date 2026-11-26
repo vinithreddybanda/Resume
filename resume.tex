@@ -137,6 +137,8 @@
 \newcommand{\entryRole}[1]{\textbf{#1}}
 \newcommand{\techStack}[1]{{\small\muted{#1}}}
 \newcommand{\activityLink}[1]{{\color{mutedColor}#1}}
+\let\oldhref\href
+\renewcommand{\href}[2]{\oldhref{#1}{\textbf{#2}}}
 
 % Document begins here
 \begin{document}
@@ -148,6 +150,8 @@
 
     \small
     \mbox{\contactIcon{\faEnvelope}\ \href{mailto:vinithreddybanda@gmail.com}{vinithreddybanda@gmail.com}}%
+    \contactSep%
+    \mbox{\contactIcon{\faGlobe}\ \href{https://vinithreddybanda.github.io}{Portfolio}}%
     \contactSep%
     \mbox{\contactIcon{\faLinkedin}\ \href{https://www.linkedin.com/in/vinithreddybanda}{LinkedIn}}%
     \contactSep%
@@ -201,7 +205,7 @@
     \begin{highlights}
         \item Developed an AI-powered journaling platform that processes journal entries and delivers structured mood insights using Groq AI, Next.js, and Supabase.
         \item Implemented end-to-end CI/CD workflows with GitHub Actions, Jenkins, Docker, and Kubernetes to standardize testing, containerization, and cloud deployment processes.
-        \item Designed a production-ready cloud deployment architecture integrating secure authentication, PostgreSQL persistence, containerized services, and automated delivery on Microsoft Azure.
+        \item Implemented a production-ready cloud deployment architecture integrating secure authentication, PostgreSQL persistence, containerized services, and automated delivery on Microsoft Azure.
     \end{highlights}
 \end{onecolentry}
 
@@ -217,7 +221,7 @@
     \begin{highlights}
         \item Developed an Android application that enables complete mobile control of Discord Rich Presence, extending capabilities not available in the official Discord mobile client.
         \item Implemented a native JNI integration layer between Android and the Discord Partner SDK to maintain persistent SDK sessions and reliable real-time communication.
-        \item Designed secure authentication, encrypted credential storage, intelligent image caching, and foreground/background services to keep Rich Presence synchronized during long-running app sessions.
+        \item Implemented secure authentication, encrypted credential storage, intelligent image caching, and foreground/background services to keep Rich Presence synchronized during long-running app sessions.
     \end{highlights}
 \end{onecolentry}
 
